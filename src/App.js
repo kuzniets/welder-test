@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import {Container} from "@mui/material";
+
+import ReposList from './components/ReposList'
+import {initLocalStorage} from "./helpers/localStorage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    initLocalStorage()
+
+    return (
+        <div className="App">
+            <Container maxWidth="sm">
+                <header className="App-header">
+                    Most popular repos
+                </header>
+
+                <ReposList />
+            </Container>
+        </div>
+    );
 }
 
 export default App;
